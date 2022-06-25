@@ -1,0 +1,12 @@
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.csproj.AssemblyReference.cache
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.AssemblyInfoInputs.cache
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.AssemblyInfo.cs
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\bin\Debug\net5.0\Models.deps.json
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\bin\Debug\net5.0\Models.dll
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\bin\Debug\net5.0\ref\Models.dll
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\bin\Debug\net5.0\Models.pdb
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.dll
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\ref\Models.dll
+D:\Visual Studio Projects\ProyectoFinalAPI\Models\obj\Debug\net5.0\Models.pdb
