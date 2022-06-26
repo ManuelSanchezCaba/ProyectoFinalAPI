@@ -9,10 +9,5 @@ namespace Services.Interfaces
 {
     public interface IRole
     {
-        public Task<object> getAllRole();
-        public Task<object> getRoleByID(int id);
-        public Task<object> createRole(Role role);
-        public Task<object> updateRole(Role role);
-        public Task<object> deleteRole(int id);
     }
 }

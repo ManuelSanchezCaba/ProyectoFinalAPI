@@ -9,11 +9,11 @@ namespace ProyectoFinalAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RoleController : Controller
+    public class LogController : Controller
     {
-        private readonly RoleRepo _db;
+        private readonly LogRepo _db;
 
-        public RoleController(RoleRepo db)
+        public LogController(LogRepo db)
         {
             _db = db;
         }
@@ -24,8 +24,8 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var roles = await _db.getAll();
-                return Ok(roles);
+                var logs = await _db.getAll();
+                return Ok(logs);
             }
             catch (Exception ex)
             {
@@ -39,8 +39,8 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var role = await _db.getByID(id);
-                return Ok(role);
+                var log = await _db.getByID(id);
+                return Ok(log);
             }
             catch (Exception ex)
             {
@@ -49,11 +49,11 @@ namespace ProyectoFinalAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Role role)
+        public async Task<IActionResult> Post([FromBody] Log log)
         {
             try
             {
-                var res = await _db.create(role);
+                var res = await _db.create(log);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -63,11 +63,11 @@ namespace ProyectoFinalAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] Role role)
+        public async Task<IActionResult> Put([FromBody] Log log)
         {
             try
             {
-                var res = await _db.update(role);
+                var res = await _db.update(log);
                 return Ok(res);
             }
             catch (Exception ex)

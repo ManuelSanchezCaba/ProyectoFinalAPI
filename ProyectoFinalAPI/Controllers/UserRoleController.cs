@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.Models;
-using Services.Interfaces;
+using Services.Repositories;
 using System;
 using System.Threading.Tasks;
 
@@ -11,9 +11,9 @@ namespace ProyectoFinalAPI.Controllers
     [Route("[controller]")]
     public class UserRoleController : Controller
     {
-        private readonly IUserRole _db;
+        private readonly UserRoleRepo _db;
 
-        public UserRoleController(IUserRole db)
+        public UserRoleController(UserRoleRepo db)
         {
             _db = db;
         }
@@ -24,7 +24,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var userRoles = await _db.getAllUserRole();
+                var userRoles = await _db.getAll();
                 return Ok(userRoles);
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var userRole = await _db.getUserRoleByID(id);
+                var userRole = await _db.getByID(id);
                 return Ok(userRole);
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.createUserRole(userRole);
+                var res = await _db.create(userRole);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.updateUserRole(userRole);
+                var res = await _db.update(userRole);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.deleteUserRole(id);
+                var res = await _db.delete(id);
                 return Ok(res);
             }
             catch (Exception ex)

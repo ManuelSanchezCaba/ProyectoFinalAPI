@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services.Interfaces
 {
-    public interface IUser
+    public interface ILog
     {
-        public Task<object> createUser(User user);
     }
 }

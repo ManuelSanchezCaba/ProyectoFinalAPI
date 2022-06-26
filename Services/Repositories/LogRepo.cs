@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Services.Repositories
 {
-    public class RoleRepo : GenericCRUD<Role>, IRole
+    public class LogRepo : GenericCRUD<Log>, ILog
     {
         private readonly AppDBContext _db;
 
-        public RoleRepo(AppDBContext db) : base(db) { _db = db; }
+        public LogRepo(AppDBContext db) : base(db) { _db = db; }
     }
 }

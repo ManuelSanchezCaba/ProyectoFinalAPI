@@ -39,7 +39,7 @@ namespace Services.Repositories
                 }
 
                 var roleUser = await _db.UserRole.Where(x => x.UserId == user.Id).FirstOrDefaultAsync();
-                var role = await _db.Role.Where(x => x.Id == roleUser.RoleId).Select(x => x.Name).FirstOrDefaultAsync();
+                var role = roleUser == null ? "Sin Role" : await _db.Role.Where(x => x.Id == roleUser.RoleId).Select(x => x.Name).FirstOrDefaultAsync();
 
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var secret = Encoding.UTF8.GetBytes(Configuration.GetSection("SECRET").Value);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.Models;
-using Services.Interfaces;
+using Services.Repositories;
 using System;
 using System.Threading.Tasks;
 
@@ -11,9 +11,9 @@ namespace ProyectoFinalAPI.Controllers
     [Route("[controller]")]
     public class UserController : Controller
     {
-        private readonly IUser _db;
+        private readonly UserRepo _db;
 
-        public UserController(IUser db)
+        public UserController(UserRepo db)
         {
             _db = db;
         }
@@ -24,7 +24,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var users = await _db.getAllUser();
+                var users = await _db.getAll();
                 return Ok(users);
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var user = await _db.getUserByID(id);
+                var user = await _db.getByID(id);
                 return Ok(user);
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.updateUser(user);
+                var res = await _db.update(user);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.deleteUser(id);
+                var res = await _db.delete(id);
                 return Ok(res);
             }
             catch (Exception ex)

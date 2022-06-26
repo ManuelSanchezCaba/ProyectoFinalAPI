@@ -74,10 +74,11 @@ namespace ProyectoFinalAPI
             });
 
             services.AddScoped<IAuth, AuthRepo>();
-            services.AddScoped<IStatus, StatusRepo>();
-            services.AddScoped<IUser, UserRepo>();
-            services.AddScoped<IRole, RoleRepo>();
-            services.AddScoped<IUserRole, UserRoleRepo>();
+            services.AddScoped<StatusRepo>();
+            services.AddScoped<UserRepo>();
+            services.AddScoped<RoleRepo>();
+            services.AddScoped<UserRoleRepo>();
+            services.AddScoped<LogRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

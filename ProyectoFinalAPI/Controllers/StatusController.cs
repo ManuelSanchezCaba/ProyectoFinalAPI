@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.Models;
-using Services.Interfaces;
+using Services.Repositories;
 using System;
 using System.Threading.Tasks;
 
@@ -11,9 +11,9 @@ namespace ProyectoFinalAPI.Controllers
     [Route("[controller]")]
     public class StatusController : Controller
     {
-        private readonly IStatus _db;
+        private readonly StatusRepo _db;
 
-        public StatusController(IStatus db)
+        public StatusController(StatusRepo db)
         {
             _db = db;
         }
@@ -24,7 +24,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var statuses = await _db.getAllStatus();
+                var statuses = await _db.getAll();
                 return Ok(statuses);
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var status = await _db.getStatusByID(id);
+                var status = await _db.getByID(id);
                 return Ok(status);
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.createStatus(status);
+                var res = await _db.create(status);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.updateStatus(status);
+                var res = await _db.update(status);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace ProyectoFinalAPI.Controllers
         {
             try
             {
-                var res = await _db.deleteStatus(id);
+                var res = await _db.delete(id);
                 return Ok(res);
             }
             catch (Exception ex)
