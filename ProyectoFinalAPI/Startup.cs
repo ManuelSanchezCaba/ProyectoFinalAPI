@@ -79,6 +79,17 @@ namespace ProyectoFinalAPI
             services.AddScoped<RoleRepo>();
             services.AddScoped<UserRoleRepo>();
             services.AddScoped<LogRepo>();
+            services.AddScoped<AddressRepo>();
+            services.AddScoped<InstitutionRepo>();
+            services.AddScoped<TeacherInstitutionRepo>();
+            services.AddScoped<StudentInstitutionRepo>();
+            services.AddScoped<SubjectRepo>();
+            services.AddScoped<SectionHeaderRepo>();
+            services.AddScoped<SectionDetailRepo>();
+            services.AddScoped<PiServerRepo>();
+            services.AddScoped<LicenseRepo>();
+            services.AddScoped<FileRepo>();
+            services.AddScoped<ExerciseRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

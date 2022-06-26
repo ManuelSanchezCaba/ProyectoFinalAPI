@@ -77,7 +77,7 @@ namespace Services.Common
             }
         }
 
-        public async Task<object> delete(int id)
+        public virtual async Task<object> delete(int id)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace Services.Common
 
                 if (entity == null) return new
                 {
-                    msg = "Estatus no Existe"
+                    msg = "Entidad no Existe"
                 };
 
                 _db.Remove(entity);

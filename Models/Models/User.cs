@@ -37,6 +37,7 @@ namespace Models.Models
 
         [Required]
         [Column("email")]
+        [EmailAddress]
         public string Email { get; set; }
     }
 }
